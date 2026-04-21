@@ -23,14 +23,21 @@
 #         print(f"{self.owner} has ${self.__balance}")
 # John = BankAccount("john doe","9999999999$")
 # print (John.__dict__)
- 
+happiness =10
 class Pet:
-    def __init__(self, name, happiness, inventory):
+    def __init__(self, name, happiness,):
         self.name = name
-        self.__happiness = happiness
-        self.inventory = [inventory]
-    def play(self, happiness):
-    def showstatus(self, happiness):
-    
+        self.happiness = happiness
+    def play(self):
+        self.happiness =+10
+        print (self.name, 'is playing fetch')
+    def showstatus(self):
+        print(self.name,"'s happiness is now",self.happiness)
+Armageddon = Pet("Armageddon senior",-10)
+Armageddon.play()
+Armageddon.showstatus()
+
+
+
 
 
