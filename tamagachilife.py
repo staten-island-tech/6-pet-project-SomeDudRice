@@ -23,19 +23,37 @@
 #         print(f"{self.owner} has ${self.__balance}")
 # John = BankAccount("john doe","9999999999$")
 # print (John.__dict__)
-happiness =10
+
 class Pet:
-    def __init__(self, name, happiness,):
+    def __init__(self, name, happiness,hunger):
         self.name = name
-        self.happiness = happiness
+        self.__happiness = happiness
+        self.hunger = hunger
     def play(self):
-        self.happiness =+10
+        self.__happiness +=10
         print (self.name, 'is playing fetch')
+    def feed(self):
+       self.hunger +=10
+       print (self.name, 'is eating toddlers')
     def showstatus(self):
-        print(self.name,"'s happiness is now",self.happiness)
-Armageddon = Pet("Armageddon senior",-10)
-Armageddon.play()
-Armageddon.showstatus()
+        print(self.name,"'s happiness is now",self.__happiness,"and fullness level is",self.hunger)
+Armageddon = Pet("Armageddon senior",0,0)
+isput = input()
+choice = isput.capitalize()
+end = 0
+while end == 0:
+    if choice == "Play":
+     Armageddon.play()
+    elif choice == "Show":
+     Armageddon.showstatus()
+    elif choice == "Feed":
+       Armageddon.feed()
+    elif choice == "End":
+       End = 1
+       print ("thanks for nurturing the messiah")
+    else:
+       print ("restart, no option exists")
+
 
 
 
