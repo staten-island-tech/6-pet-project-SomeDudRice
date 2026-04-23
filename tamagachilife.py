@@ -41,17 +41,14 @@ Armageddon = Pet("Armageddon senior",0,0)
 isput = input()
 choice = isput.capitalize()
 end = 0
-while end == 0:
-    if choice == "Play":
-     Armageddon.play()
-    elif choice == "Show":
-     Armageddon.showstatus()
-    elif choice == "Feed":
+
+if choice == "Play":
+    Armageddon.play()
+elif choice == "Show":
+    Armageddon.showstatus()
+elif choice == "Feed":
        Armageddon.feed()
-    elif choice == "End":
-       End = 1
-       print ("thanks for nurturing the messiah")
-    else:
+else:
        print ("restart, no option exists")
 
 
