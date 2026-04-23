@@ -25,30 +25,38 @@
 # print (John.__dict__)
 
 class Pet:
-    def __init__(self, name, happiness,hunger):
+    def __init__(self, name, happiness,hunger,energy):
         self.name = name
         self.__happiness = happiness
         self.hunger = hunger
+        self.energy = energy
     def play(self):
         self.__happiness +=10
         print (self.name, 'is playing fetch')
+        print (self.name, "'s happiness is now",self.__happiness)
     def feed(self):
-       self.hunger +=10
+       self.__hunger +=10
+       print (self.name, "'s fullness is now",self.__hunger)
        print (self.name, 'is eating toddlers')
+    def rest(self):
+       self.__energy +=10
+       print (self.name, "'s energy is now",self.__energy)
+       print (self.name, 'is now eepy *silly gubby humor core >w<*')
     def showstatus(self):
         print(self.name,"'s happiness is now",self.__happiness,"and fullness level is",self.hunger)
-Armageddon = Pet("Armageddon senior",0,0)
+Armageddon = Pet("Armageddon senior",0,0,0)
 isput = input()
 choice = isput.capitalize()
 end = 0
 while end == 0:
  if choice == "Play":
       Armageddon.play()
-      print ("armageddon")
  elif choice == "Show":
       Armageddon.showstatus()
  elif choice == "Feed":
       Armageddon.feed()
+ elif choice == "Nap":
+      Armageddon.rest()
  else:
       end = 1
       print ("Armageddon has been shipped to the glue factory")
