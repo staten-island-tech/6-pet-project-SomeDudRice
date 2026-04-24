@@ -23,7 +23,7 @@
 #         print(f"{self.owner} has ${self.__balance}")
 # John = BankAccount("john doe","9999999999$")
 # print (John.__dict__)
-
+inname = input("what do you want to name your pet?")
 class Pet:
     def __init__(self, name, happiness,hunger,energy):
         self.name = name
@@ -35,17 +35,17 @@ class Pet:
         print (self.name, 'is playing fetch')
         print (self.name, "'s happiness is now",self.__happiness)
     def feed(self):
-       self.__hunger +=10
-       print (self.name, "'s fullness is now",self.__hunger)
+       self.hunger +=10
+       print (self.name, "'s fullness is now",self.hunger)
        print (self.name, 'is eating toddlers')
     def rest(self):
-       self.__energy +=10
-       print (self.name, "'s energy is now",self.__energy)
+       self.energy +=10
+       print (self.name, "'s energy is now",self.energy)
        print (self.name, 'is now eepy *silly gubby humor core >w<*')
     def showstatus(self):
         print(self.name,"'s happiness is now",self.__happiness,"and fullness level is",self.hunger)
-Armageddon = Pet("Armageddon senior",0,0,0)
-isput = input()
+Armageddon = Pet(inname,0,0,0)
+isput = input("enter play, feed, or nap to preform actions and show to show stats,")
 choice = isput.capitalize()
 end = 0
 while end == 0:
@@ -57,11 +57,15 @@ while end == 0:
       Armageddon.feed()
  elif choice == "Nap":
       Armageddon.rest()
- else:
+ elif choice == "End":
       end = 1
-      print ("Armageddon has been shipped to the glue factory")
- isput = input()
- choice = isput.capitalize()
+      print (inname,"has been shipped to the glue factory ")
+ else:
+     print("please repeat it")
+ if end == 0:
+      isput = input("enter play, feed, or nap to preform actions and show to show stats,")
+      choice = isput.capitalize()
+print ("thanks for playinmg")
 
 
 
